@@ -53,6 +53,7 @@ next.addEventListener('click', function(){
         items[itemActive].classList.add('active');
         circles[itemActive].classList.add('active');
 
+        prev.classList.remove('hidden')
         if(itemActive === items.length -1){
             next.classList.add('hidden');
         }
@@ -65,15 +66,16 @@ prev.addEventListener('click', function(){
     //aggiungere la class active al nuovo elemento dell'array items e la vado a rimuovere da quello precedente
     //stessa cosa per i cerchi
 
-    if(items > o){
+    if(itemActive > 0){
         items[itemActive].classList.remove('active');
         circles[itemActive].classList.remove('active');
 
-        itemActive++;
+        itemActive--;
 
         items[itemActive].classList.add('active');
         circles[itemActive].classList.add('active');
 
+        next.classList.remove('hidden')
         if(itemActive === 0){
             prev.classList.add('hidden');
         }
